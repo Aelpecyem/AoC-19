@@ -26,5 +26,5 @@
 (defn day1
   "Day1"
   [input & args]
-  (with-open [rdr (clojure.java.io/reader (str "resources/" input  ".txt"))]
+  (with-open [rdr (clojure.java.io/reader (str "resources/day1.txt"))]
     (println (str "Day 1: " (fuel_req_2 (line-seq rdr))))))

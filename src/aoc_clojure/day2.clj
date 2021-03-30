@@ -3,7 +3,7 @@
 (defn get-opcodes
   "Splits the input string into its numbers"
   [input]
-  (mapv #(Integer/parseInt %) (clojure.string/split (slurp (str "resources/" input ".txt")) #",")))
+  (mapv #(Integer/parseInt %) (clojure.string/split (slurp (str "resources/day2.txt")) #",")))
 
 (defn apply-opcode
   "Applies the operation over the next three indexes in input"
@@ -28,7 +28,7 @@
 (defn apply-components
   "Applies the components"
   [noun verb input]
-  (assoc (assoc input 1 noun) 2 verb))
+  (assoc input 1 noun 2 verb))
 
 (defn find-components
   "Process a given list of opcode ints"
@@ -42,5 +42,6 @@
 (defn day2
   "Day2"
   [input]
- ; (println (process-opcodes (get-opcodes input)))
+  (println "Day 2:")
+  (println (process-opcodes (get-opcodes input)))
   (println (find-components (get-opcodes input))))
